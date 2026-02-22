@@ -7,11 +7,11 @@ class Coche extends Vehicle {
 	}
 	
 	set(puertas){
-		this._puertas = tipo
+		this._puertas = puertas;
 	}
 
 	get(){
-		return this._puertas
+		return this._puertas;
 	}
 
 

@@ -7,11 +7,11 @@ class Moto extends Vehiculo {
 	}
 
 	set(tipo){
-		this.tipo = tipo
+		this.tipo = tipo;
 	}
 
 	get(){
-		return this._tipo
+		return this._tipo;
 	}
 
 }

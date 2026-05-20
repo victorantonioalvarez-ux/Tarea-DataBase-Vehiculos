@@ -1,6 +1,6 @@
-import Vehiculo from './Vehiculo';
+import Vehiculo from './vehiculo.js';
 
-class Camion extends Vehicle {
+export class Camion extends Vehiculo {
 	constructor(id, marca, modelo, año, peso) {
 		super(marca, modelo, año);
 		this._peso = peso;

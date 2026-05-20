@@ -1,13 +1,13 @@
-import Vehiculo from './Vehiculo';
+import Vehiculo from './vehiculo.js';
 
-class Moto extends Vehiculo {
+export class Moto extends Vehiculo {
 	constructor(marca, modelo, año, tipo) {
 		super(marca, modelo, año);
 		this._tipo = tipo;
 	}
 
 	set(tipo){
-		this.tipo = tipo;
+		this._tipo = tipo;
 	}
 
 	get(){

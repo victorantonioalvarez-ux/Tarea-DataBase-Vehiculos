@@ -15,9 +15,6 @@ export class Vehiculo {
     set año(año) { 
     	this._año = año; 
 	}
-    set id(id) { 
-    	this._id = id; 
-	}
 
 	get marca() { 
 		return this._marca; 

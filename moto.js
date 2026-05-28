@@ -10,7 +10,7 @@ export class Moto extends Vehiculo {
 		this._tipo = tipo;
 	}
 
-	get(){
+	get tipo(){
 		return this._tipo;
 	}
 

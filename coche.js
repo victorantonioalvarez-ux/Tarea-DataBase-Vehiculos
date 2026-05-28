@@ -10,7 +10,7 @@ export class Coche extends Vehiculo {
 		this._puertas = puertas;
 	}
 
-	get(){
+	get puertas(){
 		return this._puertas;
 	}
 

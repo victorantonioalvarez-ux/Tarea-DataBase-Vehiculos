@@ -10,7 +10,7 @@ export class Camion extends Vehiculo {
 		this._peso = peso;
 	}
 
-	get(){
+	get peso(){
 		return this._peso;
 	}
 }

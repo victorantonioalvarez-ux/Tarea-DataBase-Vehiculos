@@ -6,7 +6,7 @@ export class Camion extends Vehiculo {
 		this._peso = peso;
 	}
 	
-	set(peso){
+	set peso(peso){
 		this._peso = peso;
 	}
 

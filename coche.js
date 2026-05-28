@@ -6,7 +6,7 @@ export class Coche extends Vehiculo {
 		this._puertas = puertas;
 	}
 	
-	set(puertas){
+	set puertas(puertas){
 		this._puertas = puertas;
 	}
 

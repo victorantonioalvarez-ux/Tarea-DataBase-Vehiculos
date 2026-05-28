@@ -6,7 +6,7 @@ export class Moto extends Vehiculo {
 		this._tipo = tipo;
 	}
 
-	set(tipo){
+	set tipo(tipo){
 		this._tipo = tipo;
 	}
 

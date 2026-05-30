@@ -5,6 +5,8 @@ import { Camion } from './camion.js';
 
 const lista = document.getElementById('llistaVehicles');
 const db = new DataBase();
+const textoExtra = document.getElementById('text-extra');
+const inputExtra = document.getElementById('extra');
 
 
 async function cargarDatos(){
@@ -22,6 +24,7 @@ async function cargarDatos(){
 
 document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('carregarVehicles').addEventListener("click", cargarDatos);
+    document.getElementById('tipusVehicle').addEventListener('change', cambiarTipo);
 });
 
 function mostrarVehiculos(vehiculos){
@@ -31,4 +34,18 @@ function mostrarVehiculos(vehiculos){
         div.innerHTML = `<div>${vehiculo.tipo} | ${vehiculo.marca} | ${vehiculo.modelo} | ${vehiculo.año} | ${vehiculo.extra}</div>`;
         lista.appendChild(div)
     });
+}
+
+function cambiarTipo(){
+    let extra;
+    const tipo = document.getElementById('tipusVehicle').value;
+    if (tipo === "Cotxe") {
+        extra = "Portes";
+    } else if (tipo === "Moto"){
+        extra = "Tipus";
+    } else {
+        extra = "Pes";
+    } 
+    textoExtra.innerHTML = extra;
+    inputExtra.placeholder = extra;
 }

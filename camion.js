@@ -1,7 +1,7 @@
 import { Vehiculo } from './vehiculo.js';
 
 export class Camion extends Vehiculo {
-	constructor(id, marca, modelo, año, peso) {
+	constructor(marca, modelo, año, peso) {
 		super(marca, modelo, año);
 		this._peso = peso;
 	}

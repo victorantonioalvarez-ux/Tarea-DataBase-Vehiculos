@@ -1,5 +1,5 @@
 export class Vehiculo {
-	constructor(id, marca, modelo, año){
+	constructor(marca, modelo, año){
 		this._id = Date.now() + Math.random();
 		this._marca = marca;
 		this._modelo = modelo;

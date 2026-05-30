@@ -23,3 +23,12 @@ async function cargarDatos(){
 document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('carregarVehicles').addEventListener("click", cargarDatos);
 });
+
+function mostrarVehiculos(vehiculos){
+    lista.innerHTML = "";
+    vehiculos.forEach(vehiculo => {
+        const div = document.createElement("div");
+        div.innerHTML = `<div>${vehiculo.tipo} | ${vehiculo.marca} | ${vehiculo.modelo} | ${vehiculo.año} | ${vehiculo.extra}</div>`;
+        lista.appendChild(div)
+    });
+}

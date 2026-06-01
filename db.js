@@ -13,7 +13,7 @@ export class DataBase{
 	}
 
 	borrar(id){
-		this.listaVehiculos = this.listaVehiculos.filter(v => v.id !== id);
+		this.listaVehiculos = this.listaVehiculos.filter(v => v.id !== Number(id));
 	}
 
 	datosIniciales(){

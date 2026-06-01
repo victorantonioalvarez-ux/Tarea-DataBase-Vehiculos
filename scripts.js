@@ -16,16 +16,38 @@ async function cargarDatos(){
             setTimeout(() => {
                 resolve(db.datosIniciales()); }, 2000);
         });
+        respuesta.forEach(v => db.agregar(v));
         mostrarVehiculos(respuesta)
     } catch (error) {
        lista.innerHTML = `<div>Error: ${error}</div>`;
     }
 }
 
+async function eliminarVehiculo(id){
+        try{
+        const promesa = await new Promise ((resolve, reject) => {
+            setTimeout(() => {
+                db.borrar(id);
+                resolve(id);
+            }, 1000);
+        });
+        mostrarVehiculos(db.listaVehiculos);
+        }catch(error) {
+            alert(error);
+        }
+    }
+
 document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('carregarVehicles').addEventListener('click', cargarDatos);
     document.getElementById('tipusVehicle').addEventListener('change', cambiarTipo);
     document.getElementById('afegirVehicle').addEventListener('click', addVehiculo);
+    
+    lista.addEventListener('click', (event)=>{
+        if(event.target.dataset.id){
+            const id = event.target.dataset.id;
+            eliminarVehiculo(id);
+        }
+    });
 });
 
 function mostrarVehiculos(vehiculos){
@@ -48,7 +70,9 @@ function mostrarVehiculos(vehiculos){
             type = vehiculo.type;
         }
 
-        div.innerHTML = `<div>${type} | ${vehiculo.marca} | ${vehiculo.modelo} | ${vehiculo.año} | ${extra}</div>`;
+        div.innerHTML = `<div>${type} | ${vehiculo.marca} | ${vehiculo.modelo} | ${vehiculo.año} | ${extra}
+        <button data-id="${vehiculo.id}" style="cursor: pointer;">❌</button> 
+        </div>`; 
         lista.appendChild(div)
     });
 }
@@ -99,4 +123,6 @@ async function addVehiculo(){
     }catch(error) {
         alert(error);
     }
+
+    
 }
